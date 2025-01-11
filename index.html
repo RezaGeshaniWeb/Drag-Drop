@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop in Desktop</title>
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="overflow-hidden">
+    <main class="w-full h-screen bg-desktop bg-cover bg-no-repeat bg-bottom cursor-none select-none">
+        <!-- icons -->
+        <div class="w-[238px] p-5 pt-1 flex flex-wrap gap-y-4 gap-x-10 icons">
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-access-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-css3-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-excel-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-folder-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-folder-48 (1).png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-folder-48 (2).png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-folder-48 (3).png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-folder-48 (4).png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-html-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-middle-east-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-powerpoint-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-visual-studio-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-visual-studio-code-2019-48.png" alt="" class="pointer-events-none">
+            </div>
+            <div class="w-[75px] h-[75px] flex justify-center items-center">
+                <img src="img/icons8-word-48.png" alt="" class="pointer-events-none">
+            </div>
+        </div>
+        <div id="drop" class="w-20 h-20 fixed bottom-0 right-0 flex justify-center items-center">
+            <img src="img/icons8-bin-windows-48.png" alt="">
+        </div>
+        <!-- icons -->
+
+        <!-- change bg-img -->
+        <div
+            class="hidden md:block w-60 h-[55px] hover:h-[410px] overflow-hidden transition-all duration-500 fixed top-0 right-48 p-5 text-center *:italic">
+            <strong
+                class="text-lg text-slate-100 underline underline-offset-[6px] flex items-center gap-2 hover:text-orange-400 transition-all duration-300">
+                Change Background
+                <i class="bi bi-chevron-down mt-1 text-sm"></i>
+            </strong>
+            <img data-num="1" src="img/desktop.png" alt="" class="bg w-[90%] rounded-2xl my-4 h-[100px]">
+            <img data-num="2" src="img/d1.jpg" alt="" class="bg w-[90%] rounded-2xl my-4 h-[100px]">
+            <img data-num="3" src="img/d3.jpg" alt="" class="bg w-[90%] rounded-2xl my-4 h-[100px]">
+        </div>
+        <!-- change bg-img -->
+
+        <!-- info -->
+        <div
+            class="w-44 h-[55px] hover:h-[185px] overflow-hidden transition-all duration-300 fixed top-0 right-0 p-5 text-center *:italic *:cursor-none">
+            <strong class="text-lg text-orange-400 underline underline-offset-[6px]">Reza Geshani</strong>
+            <a class="text-white font-semibold my-2 flex justify-center hover:text-orange-300"
+                href="https://www.linkedin.com/in/reza-geshani-web">Linkedin</a>
+            <a class="text-white font-semibold my-2 flex justify-center hover:text-orange-300"
+                href="https://github.com/RezaGeshaniWeb/">Github</a>
+            <a class="text-white font-semibold my-2 flex justify-center hover:text-orange-300"
+                href="https://www.instagram.com/rezageshani_web">Instagram</a>
+            <a class="text-white font-semibold my-2 flex justify-center hover:text-orange-300"
+                href="mailto:rezageshaniweb@gmail.com">Email</a>
+        </div>
+        <!-- info -->
+
+        <!-- context menu -->
+        <ul id="rc" class="w-[250px] fixed hidden rounded-xl overflow-hidden">
+            <li
+                class="list-none w-full h-[45px] border border-gray-400 border-opacity-50 flex justify-center items-center">
+                <a class="text-white italic cursor-none bg-slate-400 hover:bg-orange-300 w-full h-full text-center flex justify-center items-center"
+                    href="#">Back</a></li>
+            <li
+                class="list-none w-full h-[40px] border border-gray-400 border-opacity-50 flex justify-center items-center">
+                <a class="text-white italic cursor-none bg-slate-400 hover:bg-orange-300 w-full h-full text-center flex justify-center items-center"
+                    href="#">Reload</a></li>
+            <li
+                class="list-none w-full h-[40px] border border-gray-400 border-opacity-50 flex justify-center items-center">
+                <a class="text-white italic cursor-none bg-slate-400 hover:bg-orange-300 w-full h-full text-center flex justify-center items-center"
+                    href="#">Save as</a></li>
+            <li
+                class="list-none w-full h-[40px] border border-gray-400 border-opacity-50 flex justify-center items-center">
+                <a class="text-white italic cursor-none bg-slate-400 hover:bg-orange-300 w-full h-full text-center flex justify-center items-center"
+                    href="#">Translate to English</a></li>
+            <li
+                class="list-none w-full h-[40px] border border-gray-400 border-opacity-50 flex justify-center items-center">
+                <a class="text-white italic cursor-none bg-slate-400 hover:bg-orange-300 w-full h-full text-center flex justify-center items-center"
+                    href="#">Inspect</a></li>
+        </ul>
+        <!-- context menu -->
+
+        <!-- mouse effect -->
+        <div
+            class="c1 w-[7px] h-[7px] transition-all duration-100 absolute rounded-[50%] bg-slate-200 translate-x-[-50%] translate-y-[-50%] pointer-events-none">
+        </div>
+        <div
+            class="c2 w-[25px] h-[25px] absolute rounded-[50%] bg-orange-400 translate-x-[-50%] translate-y-[-50%] pointer-events-none border-2 border-slate-200">
+        </div>
+        <!-- mouse effect -->
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
